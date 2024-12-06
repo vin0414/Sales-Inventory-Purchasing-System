@@ -45,6 +45,7 @@ $routes->group('',['filter'=>'AuthCheck'],function($routes)
     $routes->get('admin/overview','Admin::overview');
     //products
     $routes->get('admin/products','Admin::products');
+    $routes->get('admin/products/new','Admin::newProduct');
     //others
     $routes->get('admin/settings','Admin::settings');
     $routes->get('admin/new-account-expense','Admin::newAccountExpense');

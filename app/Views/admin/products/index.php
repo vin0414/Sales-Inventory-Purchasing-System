@@ -544,14 +544,14 @@
                                 <!--end:Menu item-->
                                 <!--begin:Menu item-->
                                 <div  class="menu-item" ><!--begin:Menu link-->
-                                        <a class="menu-link active"  href="<?=site_url('admin/products')?>"><span  class="menu-title" >Products and Services</span></a>
-                                        <!--end:Menu link-->
-                                    </div><!--end:Menu item-->
-                                    <!--begin:Menu item-->
-                                    <div  class="menu-item" ><!--begin:Menu content-->
-                                        <div  class="menu-content" ><div class="menu-separator"></div></div><!--end:Menu content-->
-                                    </div>
-                                    <!--end:Menu item-->
+                                    <a class="menu-link active"  href="<?=site_url('admin/products')?>"><span  class="menu-title" >Products and Services</span></a>
+                                    <!--end:Menu link-->
+                                </div><!--end:Menu item-->
+                                <!--begin:Menu item-->
+                                <div  class="menu-item" ><!--begin:Menu content-->
+                                    <div  class="menu-content" ><div class="menu-separator"></div></div><!--end:Menu content-->
+                                </div>
+                                <!--end:Menu item-->
                                 <!--begin:Menu item-->
                                 <div  class="menu-item flex-grow-1" ></div><!--end:Menu item-->
                                 <!--begin:Menu item-->
@@ -850,7 +850,7 @@
                                     <div class="card-body">
                                         <div class="row">
                                             <div class="col-lg-8">
-                                                <h1>0</h1>
+                                                <h1><?=$expired?></h1>
                                                 <h6>EXPIRED PRODUCTS</h6>
                                             </div>
                                             <div class="col-lg-4">

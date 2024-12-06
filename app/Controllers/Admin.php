@@ -28,6 +28,8 @@ class Admin extends BaseController
 
     public function products()
     {
+        date_default_timezone_set('Asia/Manila'); 
+        $now = date('Y-m-d');
         //title
         $title = "Products and Services";
         //application details
@@ -45,11 +47,28 @@ class Admin extends BaseController
         $instock = $productModel->WHERE('Qty>',1)->countAllResults();
         //out of stock
         $outstock = $productModel->WHERE('Qty<=',0)->countAllResults();
+        //expired
+        $expired = $productModel->WHERE('expiryDate <=',$now)->countAllResults();
 
         $data = ['logo'=>$logo,'about'=>$about,'title'=>$title,
                 'product'=>$product,'total'=>$total,
-                'instock'=>$instock,'outstock'=>$outstock];
+                'instock'=>$instock,'outstock'=>$outstock,'expired'=>$expired];
         return view('admin/products/index',$data);
+    }
+
+    public function newProduct()
+    {
+        //title
+        $title = "New Product";
+        //application details
+        $appModel = new \App\Models\appModel();
+        $about = $appModel->first();
+        //logo
+        $logoModel = new \App\Models\logoModel();
+        $logo = $logoModel->first();
+
+        $data = ['logo'=>$logo,'about'=>$about,'title'=>$title];
+        return view('admin/products/new-product',$data);
     }
 
     public function settings()
