@@ -25,7 +25,7 @@ class Home extends BaseController
 
     public function auth()
     {
-        date_default_timezone_set('Asia/Manila');     
+        date_default_timezone_set('Asia/Manila');   
         //check the credentials
         $username = $this->request->getPost('username');
         $password = $this->request->getPost('password');
